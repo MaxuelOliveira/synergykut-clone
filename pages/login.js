@@ -11,7 +11,7 @@ export default function LoginScreen() {
     <main style={{ display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <div className="loginScreen">
         <section className="logoArea">
-          <img src="https://synergykut-clone.vercel.app/logo.svg" />
+          {<img src="https://synergykut-clone.vercel.app/logo.svg" />}          
 
           <p><strong>Conecte-se</strong> aos seus amigos e familiares usando recados e mensagens instantâneas</p>
           <p><strong>Conheça</strong> novas pessoas através de amigos de seus amigos e comunidades</p>
@@ -20,38 +20,38 @@ export default function LoginScreen() {
 
         <section className="formArea">
           <form className="box" onSubmit={(infosDoEvento) => {
-                infosDoEvento.preventDefault();                
-                console.log('Usuário: ', githubUser)
-                fetch('https://synergykut-clone.vercel.app/api/login', {
-                    method: 'POST',
-                    headers: {
-                       'Content-Type': 'application/json'  
-                    },
-                    body: JSON.stringify({ githubUser: githubUser })
+            infosDoEvento.preventDefault();
+            console.log('Usuário: ', githubUser)
+            fetch('https://synergykut-clone.vercel.app/api/login', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ githubUser: githubUser })
+            })
+              .then(async (respostaDoServer) => {
+                const dadosDaResposta = await respostaDoServer.json()
+                const token = dadosDaResposta.token;
+                nookies.set(null, 'USER_TOKEN', token, {
+                  path: '/',
+                  maxAge: 86400 * 7
                 })
-                .then(async (respostaDoServer) => {
-                    const dadosDaResposta = await respostaDoServer.json()
-                    const token = dadosDaResposta.token;
-                    nookies.set(null, 'USER_TOKEN', token, {
-                        path: '/',
-                        maxAge: 86400 * 7 
-                    })
-                    router.push('/')
-                })
+                router.push('/')
+              })
           }}>
             <p>
               Acesse agora mesmo com seu usuário do <strong>GitHub</strong>!
-          </p>
+            </p>
             <input
-                placeholder="Usuário"
-                value={githubUser}
-                onChange={(evento) => {
-                    setGithubUser(evento.target.value)
-                }}
+              placeholder="Usuário"
+              value={githubUser}
+              onChange={(evento) => {
+                setGithubUser(evento.target.value)
+              }}
             />
             {githubUser.length === 0
-                ? 'Preencha o campo'
-                : ''
+              ? 'Preencha o campo'
+              : ''
             }
             <button type="submit">
               Login
@@ -64,7 +64,7 @@ export default function LoginScreen() {
               <a href="/login">
                 <strong>
                   ENTRAR JÁ
-              </strong>
+                </strong>
               </a>
             </p>
           </footer>
@@ -78,4 +78,4 @@ export default function LoginScreen() {
       </div>
     </main>
   )
-} 
+}
