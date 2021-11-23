@@ -5,13 +5,13 @@ import nookies from 'nookies';
 
 export default function LoginScreen() {
   const router = useRouter();
-  const [githubUser, setGithubUser] = React.useState('omariosouto');
+  const [githubUser, setGithubUser] = React.useState('maxueloliveira');
 
   return (
     <main style={{ display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <div className="loginScreen">
         <section className="logoArea">
-          <img src="https://alurakut.vercel.app/logo.svg" />
+          <img src="https://synergykut-clone.vercel.app/logo.svg" />
 
           <p><strong>Conecte-se</strong> aos seus amigos e familiares usando recados e mensagens instantâneas</p>
           <p><strong>Conheça</strong> novas pessoas através de amigos de seus amigos e comunidades</p>
@@ -22,7 +22,7 @@ export default function LoginScreen() {
           <form className="box" onSubmit={(infosDoEvento) => {
                 infosDoEvento.preventDefault();                
                 console.log('Usuário: ', githubUser)
-                fetch('https://alurakut.vercel.app/api/login', {
+                fetch('https://synergykut-clone.vercel.app/api/login', {
                     method: 'POST',
                     headers: {
                        'Content-Type': 'application/json'  

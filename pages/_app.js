@@ -1,5 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { SynergykutStyles } from '../src/lib/SynergykutCommons';
+import { AlurakutStyles } from '../src/lib/AlurakutCommons';
 
 const GlobalStyle = createGlobalStyle`
   /* Reset CSS (Necolas Reset CSS <3) */
@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
 
-  ${SynergykutStyles}
+  ${AlurakutStyles}
 `
 
 const theme = {

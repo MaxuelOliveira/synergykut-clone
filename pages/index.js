@@ -3,7 +3,7 @@ import nookies from 'nookies';
 import jwt from 'jsonwebtoken';
 import MainGrid from '../src/components/MainGrid'
 import Box from '../src/components/Box'
-import { SynergykutMenu, SynergykutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from '../src/lib/SynergykutCommons';
+import { AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons';
 import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations';
 
 function ProfileSidebar(propriedades) {
@@ -19,7 +19,7 @@ function ProfileSidebar(propriedades) {
       </p>
       <hr />
 
-      <SynergykutProfileSidebarMenuDefault />
+      <AlurakutProfileSidebarMenuDefault />
     </Box>
   )
 }
@@ -51,7 +51,7 @@ export default function Home(props) {
   const [seguidores, setSeguidores] = React.useState([]);
  
   React.useEffect(function() {    
-    fetch('https://api.github.com/users/peas/followers')
+    fetch('https://api.github.com/users/saulocastrolp/followers')
     .then(function (respostaDoServidor) {
       return respostaDoServidor.json();
     })
@@ -87,7 +87,7 @@ export default function Home(props) {
 
   return (
     <>
-      <SynergykutMenu />
+      <AlurakutMenu />
       <MainGrid>
         {/* <Box style="grid-area: profileArea;"> */}
         <div className="profileArea" style={{ gridArea: 'profileArea' }}>
