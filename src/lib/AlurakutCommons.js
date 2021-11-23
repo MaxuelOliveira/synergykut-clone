@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import NextLink from 'next/link';
 
-const BASE_URL = 'http://synergykut-clone.vercel.app/';
+const BASE_URL = 'https://alurakut.vercel.app/';
 const v = '1';
 
 
@@ -25,7 +25,7 @@ export function AlurakutMenu({ githubUser }) {
     <AlurakutMenu.Wrapper isMenuOpen={isMenuOpen}>
       <div className="container">
         <AlurakutMenu.Logo src={`${BASE_URL}/logo.svg`} />
-
+        
         <nav style={{ flex: 1 }}>
           {[{ name: 'Inicio', slug: '/'}, {name: 'Amigos', slug: '/amigos'}, {name: 'Comunidades', slug: '/comunidades'}].map((menuItem) => (
             <Link key={`key__${menuItem.name.toLocaleLowerCase()}`} href={`${menuItem.slug.toLocaleLowerCase()}`}>
