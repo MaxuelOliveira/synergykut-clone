@@ -13,9 +13,8 @@ export default function LoginScreen() {
     <main style={{ display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <div className="loginScreen">
         <section className="logoArea">
-          {/*  {<img src="https://synergykut-clone.vercel.app/logo.svg" />} */}
-          {<img src={Logo} />}
-
+        <img src="https://alurakut.vercel.app/logo.svg" />
+        
           <p><strong>Conecte-se</strong> aos seus amigos e familiares usando recados e mensagens instantâneas</p>
           <p><strong>Conheça</strong> novas pessoas através de amigos de seus amigos e comunidades</p>
           <p><strong>Compartilhe</strong> seus vídeos, fotos e paixões em um só lugar</p>
@@ -25,7 +24,7 @@ export default function LoginScreen() {
           <form className="box" onSubmit={(infosDoEvento) => {
             infosDoEvento.preventDefault();
             console.log('Usuário: ', githubUser)
-            fetch('https://synergykut-clone.vercel.app/api/login', {
+            fetch('https://alurakut.vercel.app/api/login', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
