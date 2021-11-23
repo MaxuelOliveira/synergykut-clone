@@ -2,6 +2,8 @@ import React from 'react';
 // Hook do NextJS
 import { useRouter } from 'next/router';
 import nookies from 'nookies';
+import Logo from "../Synergy.png"
+
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -11,7 +13,8 @@ export default function LoginScreen() {
     <main style={{ display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <div className="loginScreen">
         <section className="logoArea">
-          {<img src="https://synergykut-clone.vercel.app/logo.svg" />}          
+          {/*  {<img src="https://synergykut-clone.vercel.app/logo.svg" />} */}
+          {<img src={Logo} />}
 
           <p><strong>Conecte-se</strong> aos seus amigos e familiares usando recados e mensagens instantâneas</p>
           <p><strong>Conheça</strong> novas pessoas através de amigos de seus amigos e comunidades</p>
@@ -72,7 +75,7 @@ export default function LoginScreen() {
 
         <footer className="footerArea">
           <p>
-            © 2021 alura.com.br - <a href="/">Sobre o Orkut.br</a> - <a href="/">Centro de segurança</a> - <a href="/">Privacidade</a> - <a href="/">Termos</a> - <a href="/">Contato</a>
+            © 2021 https://github.com/MaxuelOliveira/synergykut-clone - <a href="/">Sobre o Orkut.br</a> - <a href="/">Centro de segurança</a> - <a href="/">Privacidade</a> - <a href="/">Termos</a> - <a href="/">Contato</a>
           </p>
         </footer>
       </div>
